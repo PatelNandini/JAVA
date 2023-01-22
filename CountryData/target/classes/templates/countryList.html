@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Country List</title>
+<style>
+body{
+	background-color: skyblue;
+}
+table, td, th, tr{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<th>Count</th><th>Country Name</th><th>Continent</th>
+
+</tr>
+	<tr th:each="c:${countryList}">
+			<td th:text="${c.id}">1</td>
+			<td th:text="${c.name}">Canada</td>
+			<td th:text="${c.continent}">North America</td>
+			<td><a th:href="countryDetails">&nbsp;&nbsp;Details&nbsp;&nbsp;</a></td>
+		</tr>
+	</table>
+	<hr>
+	<footer>
+		<h5>Sheridan College</h5>
+		<h6>Nandini Patel</h6>
+	</footer>
+</body>
+</html>
